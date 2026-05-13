@@ -13,7 +13,7 @@ interface CardProps{
 }
 const Card = (props:CardProps) => {
    async function handleShare(){  
-        const shareLink=`http://localhost:5173/Content/share/${props.id}`;
+        const shareLink=`${window.location.origin}/Content/share/${props.id}`;
         // @ts-ignore
         await navigator.clipboard.writeText(shareLink);
         alert("The link is copied")
@@ -23,7 +23,7 @@ const Card = (props:CardProps) => {
   async function handleDelete() {
   try {
     await axios.delete(
-      "http://localhost:3000/api/v1/content",
+      "https://brainezium.onrender.com/api/v1/content",
       {
         headers: {
           token: localStorage.getItem("token"),

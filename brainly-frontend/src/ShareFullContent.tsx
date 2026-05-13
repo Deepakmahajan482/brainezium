@@ -14,7 +14,7 @@ const ShareFullContent = () => {
   const [Data,setData]=useState<ContentItem[]>([]);
   const { id } = useParams();
  useEffect(() => {
-  axios.get(`http://localhost:3000/api/v1/share/${id}`)
+  axios.get(`https://brainezium.onrender.com/api/v1/share/${id}`)
     .then(res => setData(res.data.content));
 }, []);
   return (

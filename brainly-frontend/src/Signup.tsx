@@ -9,7 +9,7 @@ const Signup = () => {
   const[username,setUsername]=useState("");
   const[password,setPassword]=useState("");
  async function signup(){
-  const res=await axios.post(`http://localhost:3000/api/v1/signup`,{username,password});
+  const res=await axios.post(`https://brainezium.onrender.com/api/v1/signup`,{username,password});
   alert(res.data.message);
   navigate("/");
  }

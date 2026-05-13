@@ -12,7 +12,7 @@ const Signin = ({setLoggedIn }: {setLoggedIn: (loggedIn: boolean) => void }) => 
   async function signin(){
     try{
       console.log(`${import.meta.env.VITE_BACKEND_URL}`);
-      const res=await axios.post(`http://localhost:3000/api/v1/signin`,{username,password});
+      const res=await axios.post(`https://brainezium.onrender.com/api/v1/signin`,{username,password});
       alert(res.data.message);
       navigate("/dashboard");
       localStorage.setItem("token",res.data.token);

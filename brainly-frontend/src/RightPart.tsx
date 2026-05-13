@@ -18,7 +18,7 @@ const RightPart = () => {
 
       async function handleAddContent(){
         console.log(type);
-       await axios.post(`http://localhost:3000/api/v1/content`,
+       await axios.post(`https://brainezium.onrender.com/api/v1/content`,
         {link,type,title,description,tags},
       {
         headers:
@@ -39,7 +39,7 @@ const RightPart = () => {
      
 
        async function handlePrivateLink(){
-        const res=await axios.post(`http://localhost:3000/api/v1/share`,{
+        const res=await axios.post(`https://brainezium.onrender.com/api/v1/share`,{
 
         },{
           headers:{
@@ -47,7 +47,7 @@ const RightPart = () => {
           }
         })
         const hash=res.data.shareId;
-        const shareLink=`http://localhost:5173/share/${hash}`;
+        const shareLink=`${window.location.origin}/share/${hash}`;
         // @ts-ignore
         await navigator.clipboard.writeText(shareLink);
         alert("The link is copied")

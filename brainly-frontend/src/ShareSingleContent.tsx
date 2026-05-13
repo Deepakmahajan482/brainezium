@@ -18,7 +18,7 @@ const ShareSingleContent = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/v1/brain/public/${id}`)
+      .get(`https://brainezium.onrender.com/api/v1/brain/public/${id}`)
       .then((res) => setData(res.data.content))
       .catch((err) => console.log(err));
   }, [id]);
